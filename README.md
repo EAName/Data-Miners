@@ -1,12 +1,12 @@
 # Data-Miners
 
-Graduate group capstone (MSDS 432) building an Azure SQL Server–hosted analytics warehouse for San Francisco housing policy data: open-data ingestion, dimensional modeling, and EDA across evictions, buyout agreements, address reference data, and zip-level demographics.
+Graduate group coursework (MSDS 432) building an Azure SQL Server–hosted analytics warehouse for San Francisco housing policy data: open-data ingestion, dimensional modeling, and EDA across evictions, buyout agreements, address reference data, and zip-level demographics.
 
 ---
 
 ## 1. Title and Summary
 
-**Data Miners (Azure ETL / Dimensional Modeling Capstone)**  
+**Data Miners (Azure ETL / Dimensional Modeling)**  
 Northwestern University M.S. in Data Science (Data Engineering specialization): extract public datasets from SF Open Data and zip atlas CSVs, load raw tables into Azure SQL Database, profile and harmonize location keys, build Kimball-style dimensions and a fact table, and explore buyout/eviction patterns in Jupyter.
 
 ---
@@ -65,12 +65,12 @@ Data-Miners/
 └── README.md
 ```
 
-- **Organization:** capstone pipeline staged as ingest → location EDA → demographics merge → dimensional DDL → subject-matter EDA notebooks
+- **Organization:** pipeline staged as ingest → location EDA → demographics merge → dimensional DDL → subject-matter EDA notebooks
 - **Reusable modules:** `insert_with_progress` chunk loader in upload notebook; otherwise SQL/pandas inline
 - **Engineering practice:** raw vs. relational vs. dimensional layers; progress-tracked bulk insert for high-row-count tables; cross-source address/zip reconciliation before star-schema load; open-data API limits and column hygiene (`@computed` drops)
 
 ---
 
-**Course context:** Northwestern University, M.S. in Data Science, Data Engineering specialization (MSDS 432 group capstone)  
+**Course context:** Northwestern University, M.S. in Data Science, Data Engineering specialization (MSDS 432)  
 **Repository:** https://github.com/EAName/Data-Miners  
 **Upstream fork base:** [kaileen-silva-northwestern/Data-Miners](https://github.com/kaileen-silva-northwestern/Data-Miners)
