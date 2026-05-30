@@ -1,6 +1,6 @@
 # Data-Miners
 
-Graduate group coursework (MSDS 432) building an Azure SQL Server–hosted analytics warehouse for San Francisco housing policy data: open-data ingestion, dimensional modeling, and EDA across evictions, buyout agreements, address reference data, and zip-level demographics.
+Graduate group coursework building an Azure SQL Server–hosted analytics warehouse for San Francisco housing policy data: open-data ingestion, dimensional modeling, and EDA across evictions, buyout agreements, address reference data, and zip-level demographics.
 
 ---
 
@@ -71,6 +71,6 @@ Data-Miners/
 
 ---
 
-**Course context:** Northwestern University, M.S. in Data Science, Data Engineering specialization (MSDS 432)  
+**Course context:** Northwestern University, M.S. in Data Science, Data Engineering specialization  
 **Repository:** https://github.com/EAName/Data-Miners  
 **Upstream fork base:** [kaileen-silva-northwestern/Data-Miners](https://github.com/kaileen-silva-northwestern/Data-Miners)
