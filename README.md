@@ -25,8 +25,6 @@ Northwestern University M.S. in Data Science (Data Engineering specialization): 
 
 **Credentials:** prefer `AZURE_MSDS432_USERNAME` / `AZURE_MSDS432_PASSWORD` env vars in most notebooks; some cells use inline connection strings
 
-**Out of scope for this repo:** AWS/EMR ingestion patterns (see **Systems-Engineering**); relational coursework SQL drills (see **Database-Systems-and-Data-Preparation**); Flask/BigQuery serving layer (see **Analytics-Applications-Engineering**).
-
 ---
 
 ## 3. Stack
