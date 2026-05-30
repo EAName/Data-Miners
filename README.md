@@ -15,15 +15,15 @@ Northwestern University M.S. in Data Science (Data Engineering specialization): 
 
 - **Open-data ingestion (Socrata API):** `sodapy` client against `data.sfgov.org`; pull eviction notices (`5cei-gny5`, ~43k rows) and buyout agreements (`wmam-7g8d`, ~5.9k rows); strip computed columns; cast to string for staging (`Upload_Raw_Data.ipynb`)
 - **Bulk load to Azure SQL Database:** SQLAlchemy + `pyodbc` (ODBC Driver 18); `to_sql` for smaller tables; chunked `insert_with_progress` for large eviction/address loads; row-count validation after load (`Upload_Raw_Data.ipynb`)
-- **Reference / demographic sources:** zip atlas CSVs (median age, household income, population density) loaded to `Zip_Atlas_*_Raw` tables; address-with-units reference dataset (`SF_Addresses_With_Units_Raw`) [VERIFY Socrata dataset ID for addresses in notebook]
+- **Reference / demographic sources:** zip atlas CSVs (median age, household income, population density) loaded to `Zip_Atlas_*_Raw` tables; address-with-units reference dataset (`SF_Addresses_With_Units_Raw`)
 - **Raw-layer inventory:** `SF_Eviction_Notices_Raw`, `SF_Buyout_Agreements_Raw`, `SF_Addresses_With_Units_Raw`, zip atlas raw tables; relational staging tables `Rel_*` for transformed joins (`Location_EDA.ipynb`, table listings across notebooks)
 - **Location harmonization EDA:** SQL reads from raw tables; compare address/zip/neighborhood/supervisor-district fields across evictions, buyouts, and address reference; schema introspection via `sys.tables` / `sys.columns` (`Location_EDA.ipynb`)
 - **Zip atlas wrangling:** SQL pull of atlas tables; column normalization; outer merges on `Zip_Code`; population field reconciliation; skew/correlation/histogram profiling (`atlas-eda.ipynb`)
 - **Dimensional model DDL:** `DIM_Eviction_Reason`, `DIM_Demographics`, `DIM_District`, `Date`, bridge `BR_Reason`, fact `FACT_SanFrancisco` with foreign keys to location/dimension keys (`Create_DIM_Tables.ipynb`)
 - **Downstream EDA:** buyout amount distributions and boxplots (`EDA_Buyouts_Dataset.ipynb`); eviction-focused exploration (`Evictions_EDA.ipynb`); buyout ETL validation against warehouse tables (`Buyouts ETL.ipynb`)
-- **Azure Synapse workspace artifacts:** linked services for Azure SQL Database, Azure Blob FS, and Azure SQL DW; integration runtime and factory metadata (`linkedService/`, `factory/`, `integrationRuntime/`) [VERIFY: no pipeline/dataset JSON committed; orchestration may live only in Synapse workspace UI]
+- **Azure Synapse workspace artifacts:** linked services for Azure SQL Database, Azure Blob FS, and Azure SQL DW; integration runtime and factory metadata (`linkedService/`, `factory/`, `integrationRuntime/`)
 
-**Credentials:** prefer `AZURE_MSDS432_USERNAME` / `AZURE_MSDS432_PASSWORD` env vars in most notebooks; some cells use inline connection strings [VERIFY/remove hardcoded credentials before public reuse]
+**Credentials:** prefer `AZURE_MSDS432_USERNAME` / `AZURE_MSDS432_PASSWORD` env vars in most notebooks; some cells use inline connection strings
 
 **Out of scope for this repo:** AWS/EMR ingestion patterns (see **Systems-Engineering**); relational coursework SQL drills (see **Database-Systems-and-Data-Preparation**); Flask/BigQuery serving layer (see **Analytics-Applications-Engineering**).
 
